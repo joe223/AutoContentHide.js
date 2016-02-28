@@ -12,8 +12,8 @@ var AutoContentHide = new AutoContentHide({
     'LIMIT_PAR':10,
 });
 
-hide.AutoHide('hide'); //element Id
-hide.AutoHide('hide2');
+AutoContentHide.AutoHide('hide'); //element Id
+AutoContentHide.AutoHide('hide2');
 ```
 
 That is all

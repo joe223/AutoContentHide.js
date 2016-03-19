@@ -1,5 +1,8 @@
 ## AutoContentHide.js
 
+
+![示例](http://7xrnuo.com1.z0.glb.clouddn.com/Screenshot.png)
+
 1. Load this `javascript` file
 2. Write this in `<script></script>`
 

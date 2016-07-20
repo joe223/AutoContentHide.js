@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title></title>
+    <link rel="stylesheet" href="./css/style.css" media="screen" title="no title" charset="utf-8">
 </head>
 <body>
     <h2>第一个示例<small>第一段显示了部分</small></h2>
     <pre>
         var hide1 = new AutoContentHide({
-            'LIMIT_PAR_LEN_MIN':1,    // 最低从第一段开始隐藏
-            'LIMIT_PAR_LEN_MAX':5,    // 超出第 5 段自动隐藏
-            'LIMIT_PROPORTION':1.0,   // 内容长度 / 窗口长度 > 1 时触发隐藏插件开关
-            'BREAK':true,             // 段落可以被拆开
-            'LIMIT_PAR':10,           // 段落长度超出 10 后可拆开段落（BREAK':true时）
-            'BUTTON_CONTENT':"SHOW 1", //展示全文按钮内容
+            'LIMIT_PAR_LEN_MIN':1,    // 最低从第一段开始隐藏（可选）
+            'LIMIT_PAR_LEN_MAX':5,    // 超出第 5 段自动隐藏（可选）
+            'LIMIT_PROPORTION':0.5,   // 内容长度 / 窗口长度 > 1 时触发隐藏插件开关（可选）
+            'BREAK':true,             // 段落可以被拆开（可选）
+            'LIMIT_PAR':10,           // 段落字数长度超出 10 后可拆开段落（BREAK':true时）（可选）
+            'BUTTON_CONTENT':"SHOW 1", //展示全文按钮内容（可选）
         });
-
         hide1.AutoHide('hide');    // 传入 id
     </pre>
     <div id="hide">
@@ -37,10 +37,10 @@
     <h2>第二个示例</h2>
     <pre>
         var hide2 = new AutoContentHide({
-            'LIMIT_PAR_LEN_MIN':1,
+            'LIMIT_PAR_LEN_MIN':5,
             'LIMIT_PAR_LEN_MAX':5,
-            'LIMIT_PROPORTION':1.0,
-            'LIMIT_PAR':1,
+            'LIMIT_PROPORTION':0,
+            'LIMIT_PAR':2,
             'BREAK':false,
             'BUTTON_CONTENT':"SHOW 2",
         });
@@ -66,69 +66,6 @@
         <p>Gone with the Wind is a novel written by Margaret Mitchell, first published in 1936. The story is set in Clayton County and Atlanta, both in Georgia, during the American Civil War and Reconstruction era. It depicts the struggles of young Scarlett O'Hara, the spoiled daughter of a well-to-do plantation owner, who must use every means at her disposal to claw her way out of the poverty she finds herself in after Sherman's March to the Sea.</p>
         <p>Gone with the Wind is a novel written by Margaret Mitchell, first published in 1936. The story is set in Clayton County and Atlanta, both in Georgia, during the American Civil War and Reconstruction era. It depicts the struggles of young Scarlett O'Hara, the spoiled daughter of a well-to-do plantation owner, who must use every means at her disposal to claw her way out of the poverty she finds herself in after Sherman's March to the Sea.</p>
     </div>
-    <script src="AutoContentHide.js"></script>
-    <script>
-        var hide1 = new AutoContentHide({
-            'LIMIT_PAR_LEN_MIN':1,
-            'LIMIT_PAR_LEN_MAX':5,
-            'LIMIT_PROPORTION':1.0,
-            'LIMIT_PAR':10,
-            'BREAK':true,
-            'BUTTON_CONTENT':"SHOW 1",
-        });
-        var hide2 = new AutoContentHide({
-            'LIMIT_PAR_LEN_MIN':1,
-            'LIMIT_PAR_LEN_MAX':5,
-            'LIMIT_PROPORTION':1.0,
-            'LIMIT_PAR':10,
-            'BREAK':false,
-            'BUTTON_CONTENT':"SHOW 2",
-        });
-        hide1.AutoHide('hide');
-        hide2.AutoHide('hide2');
-    </script>
-
-    <style>
-        body{
-            font-family: Arial, Microsoft Yahei, SimSun, 'Helvetica Neue', 'Liberation Sans', FreeSans, sans-serif;
-        }
-        pre{
-            padding: 20px;
-            background-color: #e0e0e0;
-            border:1px solid #888;
-            border-radius: 10px;
-        }
-        .first-paragraph-hide{
-            max-height:100px;
-            min-height: 50px; 
-            overflow : hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 5;
-            -webkit-box-orient: vertical;
-        }
-        .show-btn{
-            display: block;
-            overflow: hidden;
-            margin-top: 10px; 
-            width: 100%;
-            height: 16px;
-            border: 1px solid #888;
-            border-radius: 0.3rem;
-            padding: 10px 0 10px 0;
-            font-family: "Micorosoft YaHei","微软雅黑",Serif;
-            font-size: 16px;
-            text-decoration: none;
-            text-align: center;
-            letter-spacing: 0.04em;
-            line-height: 16px;
-            color: #3e444f;
-            background-color: #fff;
-        }
-        .show-btn:hover{
-            background-color: #000;
-            color:#fff;
-        }
-    </style>
+    <script type="text/javascript" src="http://requirejs.org/docs/release/2.2.0/comments/require.js" data-main="./js/app"></script>
 </body>
 </html>

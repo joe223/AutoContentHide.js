@@ -1,4 +1,3 @@
-
 require.config({
     paths: {
         "$hide": "./AutoContentHide",
@@ -23,5 +22,4 @@ require(['$hide'], function(hide){
     });
     hide1.AutoHide('hide');
     hide2.AutoHide('hide2');
-
-})
+});
